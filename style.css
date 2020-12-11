@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.clock {
+    border: 1px solid red;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.twelve {
+    position: absolute;
+    top: 11px; /*10 + 1border*/
+    left: 141px;  /*150 - 1(border) - 8(char)*/
+}
+.nine {
+    position: absolute;
+    top: 141px; 
+    left: 11px;
+}
+.three {
+    position: absolute;
+    top: 141px; 
+    right: 11px;
+}
+.ten {
+    position: absolute; 
+    width: 400px;
+}
+.six {
+    position: absolute; 
+    bottom: 11px;
+    left: 141px;
+}
+.center {
+    position: absolute;
+    top: 150px;
+    left: 140px;
+    background-color: black;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    z-index: 100;
+}
+.hour {
+    position: absolute;
+    top: 152px;
+    left: 95px;
+    background: linear-gradient(90deg, transparent 50%, #202B4A 50%);
+    width: 100px;
+    height: 6px;
+    border-radius: 30px;
+    animation-name: For-Hours;
+    animation-duration: 20s; /* 24*3600*/
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.min {
+    position: absolute;
+    top: 153px;
+    left: 66px;
+    background: linear-gradient(90deg, transparent 50%, #2B3349 50%);
+    width: 160px;
+    height: 4px;
+    border-radius: 50px;
+    animation-name: For-Minute;
+    animation-duration: 10s; /*3600*/
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    z-index: 10;
+}
+.seconds {
+    position: absolute;
+    top: 154px;
+    left: 45px;
+    width: 200px;
+    height: 2px;
+    border-radius: 30px;
+    background: linear-gradient(90deg, transparent 50%, #2C4489 50%);
+    animation-name: For-Second;
+    animation-duration: 1s; /*60*/
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    z-index: 20;
+}
+
+@keyframes For-Second {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes For-Minute {
+    from {
+        transform: rotate(-10deg);
+    }
+    to {
+        transform: rotate(350deg);
+    }
+}
+@keyframes For-Hours {
+    from {
+        transform: rotate(20deg);
+    }
+    to {
+        transform: rotate(380deg);
+    }
+}
+.name {
+    position: absolute;
+    top: 215px;
+    left: 112px;
+}
